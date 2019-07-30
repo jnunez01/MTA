@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Welcome!</title>
+        <link type="text/css" rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>MTAze App</h1>
+        <p></p>
+      <div>
+        <ul>
+          {% for message in events %}
+              <p>{{ message.message }} - {{ message.date }}</p>
+          {% endfor %}
+        </ul>
+       <form method="post" action="/new-message">
+            <label for="message">Enter your message here:</label>
+            <input type="text" name="message_name" value="">
+            <label for="message_date">Date:</label>
+            <input type="date" name="message_date" value="">
+            <input type="submit" value="Send">
+      </div>
+      </form>
+      
+      <div style="clear:both"></div>
+      <form align="left" name="form1" method="post" action="/log-out">
+     <label>
+     <input name="submit2" type="submit" id="submit2" value="log out">
+      </label>
+      </form>
+      <a href='/remove'>REMOVE</a>
+    </body>
+</html>
